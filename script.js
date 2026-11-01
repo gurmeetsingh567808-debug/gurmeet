@@ -1,6 +1,6 @@
 
 /* =================================
-   GURMEET SINGH - PERSONAL WEBSITE
+   PERSONAL WEBSITE
    EDIT YOUR DETAILS HERE
 ================================= */
 
@@ -8,20 +8,15 @@ const profile = {
 
   name: "Gurmeet Singh",
 
-  photo: "https://placehold.co/500x500/png",
+  photo: "https://i.ibb.co/20ZML3Zq/2c3688d7e305ec9057d76f2d0e567e4a.jpg",
 
-  instagram: "https://instagram.com/YOUR_USERNAME",
+  instagram: "https://www.instagram.com/_mg_verse_08_",
 
   telegram: "https://t.me/YOUR_USERNAME",
 
-  youtube: "https://youtube.com/@YOUR_CHANNEL",
+  youtube: "https://youtube.com/@gurmeet_explains",
 
-  about: `Hey! I'm Gurmeet Singh.
-
-I enjoy exploring technology, coding, website development
-and digital creativity.
-
-Always learning, building and exploring new things.`
+  about: `Hey! I'm Gurmeet Singh.`
 
 };
 
