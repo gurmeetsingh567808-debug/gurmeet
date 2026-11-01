@@ -1,11 +1,5 @@
 
-/* =====================================
-   PERSONAL DETAILS
-   Change your details here
-===================================== */
-
 const profile = {
-
   name: "Gurmeet Singh",
 
   photo: "https://i.ibb.co/20ZML3Zq/2c3688d7e305ec9057d76f2d0e567e4a.jpg",
@@ -22,19 +16,12 @@ I enjoy exploring technology, coding, website development
 and digital creativity.
 
 Always learning, building and exploring new things.`
-
 };
 
-
-/* =====================================
-   LOAD PROFILE DETAILS
-===================================== */
-
-// Name
+// LOAD PROFILE
 document.getElementById("profileName").innerHTML =
   `${profile.name}<span>.</span>`;
 
-// Profile photo
 const photo = document.getElementById("profilePhoto");
 
 photo.src = profile.photo;
@@ -43,15 +30,14 @@ photo.onerror = function() {
   this.src = "https://placehold.co/500x500/png";
 };
 
-// About section (only one place)
-document.getElementById("aboutText").textContent =
-  profile.about;
+// ABOUT ME
+const aboutElement = document.getElementById("aboutText");
 
+if (aboutElement) {
+  aboutElement.textContent = profile.about;
+}
 
-/* =====================================
-   SOCIAL MEDIA LINKS
-===================================== */
-
+// SOCIAL LINKS
 document.getElementById("instagramLink").href =
   profile.instagram;
 
@@ -61,97 +47,95 @@ document.getElementById("telegramLink").href =
 document.getElementById("youtubeLink").href =
   profile.youtube;
 
-
-/* =====================================
-   FOOTER YEAR
-===================================== */
-
+// FOOTER YEAR
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
-
-/* =====================================
-   COPY WEBSITE LINK
-===================================== */
-
+// TOAST
 const toast = document.getElementById("toast");
 
 function showToast(message) {
-
   toast.textContent = message;
-
   toast.classList.add("show");
 
   setTimeout(() => {
     toast.classList.remove("show");
-  }, 2200);
-
+  }, 2500);
 }
 
-async function copyWebsiteLink() {
+// SHARE WEBSITE
+async function shareWebsite() {
+  const shareData = {
+    title: "Gurmeet Singh",
+    text: "Check out my personal website!",
+    url: window.location.href
+  };
 
   try {
-
-    await navigator.clipboard.writeText(
-      window.location.href
-    );
-
-    showToast("Website link copied!");
-
-  } catch {
-
-    showToast("Copy unavailable. Copy URL manually.");
-
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else {
+      await copyLink();
+    }
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      await copyLink();
+    }
   }
-
 }
 
+// COPY LINK WITH FALLBACK
+async function copyLink() {
+  try {
+    await navigator.clipboard.writeText(window.location.href);
+    showToast("Website link copied!");
+  } catch {
+    const textarea = document.createElement("textarea");
+
+    textarea.value = window.location.href;
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    const success = document.execCommand("copy");
+
+    textarea.remove();
+
+    showToast(
+      success ? "Website link copied!" : "Please copy URL manually."
+    );
+  }
+}
+
+// BUTTON EVENTS
 document.getElementById("shareBtn")
-  .addEventListener("click", copyWebsiteLink);
+  .addEventListener("click", shareWebsite);
 
 document.getElementById("copyBtn")
-  .addEventListener("click", copyWebsiteLink);
+  .addEventListener("click", copyLink);
 
-
-/* =====================================
-   3D HOVER EFFECT
-===================================== */
-
-const supportsHover = window.matchMedia(
-  "(hover: hover) and (pointer: fine)"
-).matches;
-
-const reducedMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)"
-).matches;
-
-if (supportsHover && !reducedMotion) {
-
+// 3D EFFECT
+if (
+  matchMedia("(hover: hover) and (pointer: fine)").matches &&
+  !matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
   document.querySelectorAll(".tilt-card").forEach(card => {
 
-    card.addEventListener("mousemove", event => {
-
+    card.addEventListener("mousemove", e => {
       const rect = card.getBoundingClientRect();
 
-      const x =
-        (event.clientX - rect.left) / rect.width - 0.5;
-
-      const y =
-        (event.clientY - rect.top) / rect.height - 0.5;
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
 
       card.style.transform =
-        `perspective(1000px)
-         rotateX(${-y * 5}deg)
-         rotateY(${x * 5}deg)`;
-
+        `perspective(1000px) rotateX(${-y * 5}deg) rotateY(${x * 5}deg)`;
     });
 
     card.addEventListener("mouseleave", () => {
-
       card.style.transform = "";
-
     });
 
   });
-
 }
