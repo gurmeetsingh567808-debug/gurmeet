@@ -6,7 +6,7 @@ const profile = {
 
   instagram: "https://www.instagram.com/_mg_verse_08_/",
 
-  telegram: "https://t.me/+V0Z-_9wYdI44OWI1",
+  telegram: "https://t.me/gurmeetsingh_08",
 
   youtube: "https://youtube.com/@gurmeet_explains",
 
