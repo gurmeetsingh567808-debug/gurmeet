@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fc">
+
+  <meta name="description" content="Gurmeet Singh - Personal Profile and Social Links">
+
+  <title>Gurmeet Singh | Personal Space</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+
+    <a href="#" class="logo">GS<span>.</span></a>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#socials">Socials</a>
+    </nav>
+
+    <button id="shareBtn" class="share-btn">
+      Share ↗
+    </button>
+
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+      <div class="hero-card tilt-card">
+
+        <div class="profile-image-container">
+          <img
+            id="profilePhoto"
+            src=""
+            alt="Gurmeet Singh"
+          >
+        </div>
+
+        <div class="profile-content">
+
+          <span class="eyebrow">PERSONAL SPACE</span>
+
+          <h1 id="profileName">
+            Gurmeet Singh<span>.</span>
+          </h1>
+
+          <p class="tagline">
+            Creator · Developer · Explorer
+          </p>
+
+          <p class="hero-about" id="heroAbout"></p>
+
+          <div class="hero-buttons">
+
+            <a href="#socials" class="primary-btn">
+              Connect With Me ↗
+            </a>
+
+            <button id="copyBtn" class="secondary-btn">
+              Copy Profile Link
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="floating-decoration decoration-one">✦</div>
+        <div class="floating-decoration decoration-two">✧</div>
+
+      </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+
+      <div class="section-heading">
+        <span class="eyebrow">A LITTLE INTRODUCTION</span>
+        <h2>About Me<span>.</span></h2>
+      </div>
+
+      <div class="about-card tilt-card">
+
+        <div class="about-icon">✦</div>
+
+        <p id="aboutText"></p>
+
+      </div>
+
+    </section>
+
+    <!-- SOCIAL SECTION -->
+    <section class="section" id="socials">
+
+      <div class="section-heading">
+
+        <span class="eyebrow">FIND ME ONLINE</span>
+
+        <h2>Let's Connect<span>.</span></h2>
+
+        <p>
+          Find me on your favourite platforms.
+        </p>
+
+      </div>
+
+      <div class="social-grid">
+
+        <!-- INSTAGRAM -->
+        <a
+          id="instagramLink"
+          class="social-card tilt-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="social-icon instagram-icon">
+            IG
+          </div>
+
+          <div class="social-info">
+            <h3>Instagram</h3>
+            <p>Follow my journey</p>
+          </div>
+
+          <span class="arrow">↗</span>
+
+        </a>
+
+        <!-- TELEGRAM -->
+        <a
+          id="telegramLink"
+          class="social-card tilt-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="social-icon telegram-icon">
+            TG
+          </div>
+
+          <div class="social-info">
+            <h3>Telegram</h3>
+            <p>Connect with me</p>
+          </div>
+
+          <span class="arrow">↗</span>
+
+        </a>
+
+        <!-- YOUTUBE -->
+        <a
+          id="youtubeLink"
+          class="social-card tilt-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="social-icon youtube-icon">
+            YT
+          </div>
+
+          <div class="social-info">
+            <h3>YouTube</h3>
+            <p>Watch my content</p>
+          </div>
+
+          <span class="arrow">↗</span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+      <a href="#" class="logo">GS<span>.</span></a>
+
+      <p>
+        © <span id="year"></span> Gurmeet Singh.
+        All rights reserved.
+      </p>
+
+      <a href="#">Back to top ↑</a>
+
+    </footer>
+
+  </main>
+
+  <div class="toast" id="toast">
+    Link copied!
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
