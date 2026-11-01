@@ -6,16 +6,13 @@ const profile = {
 
   instagram: "https://www.instagram.com/_mg_verse_08_/",
 
-  telegram: "https://t.me/YOUR_USERNAME",
+  telegram: "https://t.me/+V0Z-_9wYdI44OWI1",
 
   youtube: "https://youtube.com/@gurmeet_explains",
 
-  about: `Hey! I'm Gurmeet Singh.
-
-I enjoy exploring technology, coding, website development
-and digital creativity.
-
-Always learning, building and exploring new things.`
+  about: `I enjoy exploring technology,coding,
+website development and digital creativity.
+Always learning,building and exploring new things.`
 };
 
 // LOAD PROFILE
